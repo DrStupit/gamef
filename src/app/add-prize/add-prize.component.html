@@ -1,0 +1,19 @@
+<div class="container" >
+    <form (ngSubmit)="onSubmit()" #prizeForm="ngForm">
+
+      <mat-form-field class="example-full-width">
+         <input matInput type="text" id="prizeName"  required  name="prizeName" maxlength="13" [(ngModel)]="prizeModel.prizeName">
+         <mat-placeholder class="placeholder">Prize Name</mat-placeholder>
+      </mat-form-field>
+
+       <mat-form-field class="example-full-width">
+         <input matInput type="number"  id="prizeValue" required  name="prizeValue" maxlength="10" [(ngModel)]="prizeModel.prizeValue">
+         <mat-placeholder class="placeholder">Prize Value</mat-placeholder>
+      </mat-form-field>
+
+      <mat-checkbox [(ngModel)]="isMonetary" name="isMonetary">Is Monetary?</mat-checkbox>
+
+     <button mat-raised-button type="submit" color="primary" [disabled]="!prizeForm.form.valid">Submit</button>
+
+    </form>
+</div>
